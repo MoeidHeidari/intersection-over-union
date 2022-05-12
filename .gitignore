@@ -77,3 +77,11 @@ typings/
 
 #DynamoDB Local files 
 .dynamodb/ 
+
+#compiled javascript
+dist
+
+#compiled javascript with all sub directories
+dist/**
+
+
