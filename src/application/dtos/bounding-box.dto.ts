@@ -2,7 +2,7 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { IsDefined, IsNotEmpty, IsUrl, MaxLength } from 'class-validator';
+import { IsDefined, IsNotEmpty, IsNumber } from 'class-validator';
 const allowedProperties = ['left', 'right', 'top', 'bottom'];
 export class BoundingBoxDTO {
     /**
@@ -10,24 +10,28 @@ export class BoundingBoxDTO {
      */
     @IsDefined()
     @IsNotEmpty()
+    @IsNumber()
     left: number;
     /**
      * Right coordinate of the bounding box.
      */
     @IsDefined()
     @IsNotEmpty()
+    @IsNumber()
     right: number;
     /**
      * Top coordinate of the bounding box.
      */
     @IsDefined()
     @IsNotEmpty()
+    @IsNumber()
     top: number;
     /**
      * Bottom coordinate of the bounding box.
      */
     @IsDefined()
     @IsNotEmpty()
+    @IsNumber()
     bottom: number;
 
     /**
