@@ -1,0 +1,23 @@
+/**
+ * Author Moeid Heidari
+ * Date 12 May 2022
+ */
+export class BoundingBox{
+    /**
+     * left coordinate of the bounding box
+     */
+    left: number;
+    /**
+     * right coordinate of the bounding box
+     */
+    right:number;
+    /**
+     * top coordinate of the bounding box
+     */
+    top: number;
+    /**
+     * bottom coordinate of the bounding box
+     */
+    bottom: number;
+
+}
