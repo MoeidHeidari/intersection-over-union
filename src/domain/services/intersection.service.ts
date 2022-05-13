@@ -2,9 +2,9 @@
  * Author Moeid Heidari
  * Date 13 May 2022
  */
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable,Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { BoundingBoxDTO, IOUResponseDTO, IOURquestDTO } from '../../application/dtos';
+import { IOUResponseDTO, IOURquestDTO } from '../../application/dtos';
 import { EnvObjects, IntersectionOptions } from '../../infrastructure/config';
 import { HttpResponseException } from '../exceptions';
 import { processHttpError, validateDTO, validateOutputDTO } from '../helpers';
@@ -13,10 +13,9 @@ import { HttpResponseService, LoggerService } from './common';
 
 @Injectable()
 export class IntersectionService {
-    private readonly logger: LoggerService = new LoggerService(IntersectionService.name);
     private readonly config: any = this.configService.get<IntersectionOptions>(EnvObjects.INTERSECTION_OPTIONS);
     //===========================================================================================
-    constructor(private readonly httpResponseService: HttpResponseService, private configService: ConfigService) { }
+    constructor(private readonly httpResponseService: HttpResponseService, private configService: ConfigService,private readonly logger:LoggerService) { }
     //===========================================================================================
 
     async calculateIOU(boudings:IOURquestDTO): Promise<HttpResponse> {
@@ -29,7 +28,6 @@ export class IntersectionService {
             @todo Write the IOU calculation here... 
             */
             
-
             const result=new IOUResponseDTO({iou:iou});
             await validateOutputDTO(result, this.logger);
             return  this.httpResponseService.generate(HttpStatus.OK, result);

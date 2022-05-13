@@ -4,3 +4,4 @@
  */
 export * from './bounding-boxes.factory'
 export * from './intersection.factory'
+export * from './iou.factory'

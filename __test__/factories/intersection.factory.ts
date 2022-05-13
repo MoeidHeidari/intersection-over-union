@@ -53,4 +53,4 @@ export const intersectionWithEmptyPredictedBoundingBox = {
     predicted_bounding_box: {},
 }
 //============================================================================================
-export const aIntersection                  = new IOURquestDTO(intersection);
+export const aFakeIntersection                  = new IOURquestDTO(intersection);
