@@ -15,7 +15,8 @@
         top: 6,
         bottom: 6
     },
-    expected:0.1184
+    expected:0.118,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_2 = {
@@ -31,7 +32,8 @@ export const TEST_INTERSECTION_2 = {
         top: 10,
         bottom: 10
     },
-    expected: 1.0000
+    expected: 1.000,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_3 = {
@@ -47,7 +49,8 @@ export const TEST_INTERSECTION_3 = {
         top: 5,
         bottom: 5
     },
-    expected:0.0000
+    expected:0.000,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_4 = {
@@ -63,7 +66,8 @@ export const TEST_INTERSECTION_4 = {
         top: 9,
         bottom: 5
     },
-    expected:0.0638
+    expected:0.064,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_5 = {
@@ -79,7 +83,8 @@ export const TEST_INTERSECTION_5 = {
         top: 3,
         bottom: 2
     },
-    expected:0.5000
+    expected:0.500,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_6 = {
@@ -95,7 +100,8 @@ export const TEST_INTERSECTION_6 = {
         top: 0,
         bottom: 0
     },
-    expected:0
+    expected:0,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_7 = {
@@ -111,7 +117,8 @@ export const TEST_INTERSECTION_7 = {
         top: 2,
         bottom: 2
     },
-    expected:0.3333
+    expected:0.333,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_8 = {
@@ -127,7 +134,8 @@ export const TEST_INTERSECTION_8 = {
         top: 5,
         bottom: 5
     },
-    expected:0
+    expected:0,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_9 = {
@@ -143,7 +151,8 @@ export const TEST_INTERSECTION_9 = {
         top: 0.345,
         bottom: 0.23458
     },
-    expected:0.4685
+    expected:0.468,
+    number_of_decimal_places:3
 }
 //===========================================================================================================
 export const TEST_INTERSECTION_10 = {
@@ -159,6 +168,7 @@ export const TEST_INTERSECTION_10 = {
         top: -5,
         bottom: 6
     },
-    expected:0
+    expected:0,
+    number_of_decimal_places:3
 }
 //===========================================================================================================

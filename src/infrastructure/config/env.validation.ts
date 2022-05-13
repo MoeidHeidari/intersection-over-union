@@ -13,7 +13,7 @@ class EnvironmentVariables {
   @IsInt()
   @Min(1)
   @Max(10)
-  DECIMAL_PLACES: number=1;
+  DECIMAL_PLACES: number=3;
 }
 
 /**

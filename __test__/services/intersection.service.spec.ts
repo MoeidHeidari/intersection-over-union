@@ -5,9 +5,8 @@
 import { IntersectionService } from '../../src/domain/services/intersection.service'
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigService } from '@nestjs/config';
-import { HttpStatus } from '@nestjs/common';
+import { CommonModule } from '../../src/infrastructure/modules/common/common.module'
 import { HttpResponseService, LoggerService } from '../../src/domain/services/common';
-import { aFakeBoundingBox } from '../factories/bounding-boxes.factory';
 import {
     aFakeIntersection,
     intersectionWithEmptyGroundTruthBoundinBox,
@@ -29,6 +28,7 @@ import {
     TEST_INTERSECTION_8,
     TEST_INTERSECTION_9
 } from '../factories';
+import { EnvObjects, IntersectionOptions } from '../../src/infrastructure/config';
 describe('intersection service', () => {
     /**
      * Make an Instantiation from Intersection service.
@@ -36,6 +36,9 @@ describe('intersection service', () => {
     let service: IntersectionService
 
     const config = new ConfigService();
+    
+   
+    
     const logger = new LoggerService(IntersectionService.name);
     const httpReponseService = new HttpResponseService();
     beforeAll(async () => {
@@ -54,9 +57,11 @@ describe('intersection service', () => {
                     useValue: logger
                 },
                 IntersectionService
-            ]
+            ],
+            imports: [CommonModule],
         }).compile();
 
+        
         service = module.get<IntersectionService>(IntersectionService);
     });
     //======================================================================================================
@@ -68,26 +73,26 @@ describe('intersection service', () => {
     //=======================================================================================================
     describe('service tests', () => {
         it('must return 0', async () => {
-            const result = await service.calculateIOU(aFakeIntersection)
+            const result = await service.handlIOUReuest(aFakeIntersection)
             expect(result.data.iou).toBeDefined();
         })
         it('intersection Without Predicted Bounding Box must get http bad request', () => {
 
-            const result = service.calculateIOU(new IOURquestDTO(intersectionWithoutGroundTruthBoundinBox))
+            const result = service.handlIOUReuest(new IOURquestDTO(intersectionWithoutGroundTruthBoundinBox))
             expect(result).rejects.toThrowError(HttpResponseException);
         })
         it('must get http bad request', () => {
 
-            const result = service.calculateIOU(new IOURquestDTO(intersectionWithoutPredictedBoundingBox))
+            const result = service.handlIOUReuest(new IOURquestDTO(intersectionWithoutPredictedBoundingBox))
             expect(result).rejects.toThrowError(HttpResponseException);
         })
         it('intersection With Empty Ground Truth Boundin Box must get http bad request', () => {
 
-            const result = service.calculateIOU(new IOURquestDTO(intersectionWithEmptyGroundTruthBoundinBox))
+            const result = service.handlIOUReuest(new IOURquestDTO(intersectionWithEmptyGroundTruthBoundinBox))
             expect(result).rejects.toThrowError(HttpResponseException);
         })
         it('intersection With Empty Predicted Bounding Box must get http bad request', () => {
-            const result = service.calculateIOU(new IOURquestDTO(intersectionWithEmptyPredictedBoundingBox))
+            const result = service.handlIOUReuest(new IOURquestDTO(intersectionWithEmptyPredictedBoundingBox))
             expect(result).rejects.toThrowError(HttpResponseException);
         })
     })
@@ -96,44 +101,44 @@ describe('intersection service', () => {
     describe('iou calculation tests', () => {
 
         it('should return ' + TEST_INTERSECTION_1.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_1)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_1.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_1.ground_truth_bounding_box,TEST_INTERSECTION_1.predicted_bounding_box,TEST_INTERSECTION_1.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_1.expected);
         })
         it('should return ' + TEST_INTERSECTION_2.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_2)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_2.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_2.ground_truth_bounding_box,TEST_INTERSECTION_2.predicted_bounding_box,TEST_INTERSECTION_2.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_2.expected);
         })
         it('should return ' + TEST_INTERSECTION_3.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_3)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_3.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_3.ground_truth_bounding_box,TEST_INTERSECTION_3.predicted_bounding_box,TEST_INTERSECTION_3.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_3.expected);
         })
         it('should return ' + TEST_INTERSECTION_4.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_4)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_4.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_4.ground_truth_bounding_box,TEST_INTERSECTION_4.predicted_bounding_box,TEST_INTERSECTION_4.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_4.expected);
         })
         it('should return ' + TEST_INTERSECTION_5.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_5)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_5.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_5.ground_truth_bounding_box,TEST_INTERSECTION_5.predicted_bounding_box,TEST_INTERSECTION_5.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_5.expected);
         })
         it('should return ' + TEST_INTERSECTION_6.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_6)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_6.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_6.ground_truth_bounding_box,TEST_INTERSECTION_6.predicted_bounding_box,TEST_INTERSECTION_6.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_6.expected);
         })
         it('should return ' + TEST_INTERSECTION_7.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_7)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_7.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_7.ground_truth_bounding_box,TEST_INTERSECTION_7.predicted_bounding_box,TEST_INTERSECTION_7.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_7.expected);
         })
         it('should return ' + TEST_INTERSECTION_8.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_8)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_8.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_8.ground_truth_bounding_box,TEST_INTERSECTION_8.predicted_bounding_box,TEST_INTERSECTION_8.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_8.expected);
         })
         it('should return ' + TEST_INTERSECTION_9.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_9)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_9.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_9.ground_truth_bounding_box,TEST_INTERSECTION_9.predicted_bounding_box,TEST_INTERSECTION_9.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_9.expected);
         })
         it('should return ' + TEST_INTERSECTION_10.expected, async () => {
-            const result = await service.calculateIOU(TEST_INTERSECTION_10)
-            expect(result.data.iou).toEqual(TEST_INTERSECTION_10.expected);
+            const result = await service.calculateIOU(TEST_INTERSECTION_10.ground_truth_bounding_box,TEST_INTERSECTION_10.predicted_bounding_box,TEST_INTERSECTION_10.number_of_decimal_places)
+            expect(result).toEqual(TEST_INTERSECTION_10.expected);
         })
 
     })

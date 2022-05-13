@@ -10,6 +10,6 @@ import { LoggerService } from '../services/common';
   imports: [CommonModule],
   controllers: [IntersectionController],
   providers: [IntersectionService],
-  exports: [],
+  exports: [IntersectionService],
 })
 export class IntersectionModule {}

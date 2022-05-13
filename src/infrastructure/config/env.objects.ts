@@ -29,7 +29,7 @@ export interface IntersectionOptions{
  */
  export const configuration = (): any => ({
     IntersectionOptions: {
-      baseUri: process.env.DECIMAL_PLACES,
+      number_of_decimal_places: process.env.DECIMAL_PLACES,
     }
   });
 

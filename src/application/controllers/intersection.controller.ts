@@ -13,7 +13,7 @@ export class IntersectionController{
     @Post('iou')
     @HttpCode(HttpStatus.OK)
     async calculateIou(@Body() body:any):Promise<HttpResponse>{
-        const response: HttpResponse = await this.interSectionService.calculateIOU(new IOURquestDTO(body));
+        const response: HttpResponse = await this.interSectionService.handlIOUReuest(new IOURquestDTO(body));
         return response;
     }
 }
