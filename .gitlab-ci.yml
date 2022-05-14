@@ -30,6 +30,7 @@ test:
     - npm run format
     - npm run lint
     - npm test
+
 deploy:
     stage: deploy
     rules:
