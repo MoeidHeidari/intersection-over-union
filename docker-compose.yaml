@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  intersection:
+    image: moeidheidari/intersection:v1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: intersection
+    restart: always
+    ports:
+      - 8088:8088
