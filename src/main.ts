@@ -33,7 +33,8 @@ async function bootstrap() {
     const NODE_PORT = configService.get('NODE_PORT');
     if (!NODE_PORT) {
       throw new Error(
-        'Please define the node port as an environmental variable \n You can use Export NODE_PORT={port} or define a .env file'
+        "Please define the node port as an environmental variable"
+         
       );
     }
     await app.listen(NODE_PORT, () => Logger.log('HTTP Service is listening on port ' + String(NODE_PORT), 'App'));
