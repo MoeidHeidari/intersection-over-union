@@ -34,7 +34,6 @@ async function bootstrap() {
     if (!NODE_PORT) {
       throw new Error(
         "Please define the node port as an environmental variable"
-         
       );
     }
     await app.listen(NODE_PORT, () => Logger.log('HTTP Service is listening on port ' + String(NODE_PORT), 'App'));
