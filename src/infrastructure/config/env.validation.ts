@@ -9,6 +9,9 @@ import { validateSync, IsOptional } from 'class-validator';
  * env vatiables
  */
 class EnvironmentVariables {
+  /**
+   * Decimal places of the calculated IOU
+   */
   @IsOptional()
   DECIMAL_PLACES = 3;
 }

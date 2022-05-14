@@ -48,7 +48,7 @@
   <li>Interfaces</li>
   <li
   >
-  HttpResponse</li>
+  ValidationPipeOptions</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,7 +66,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/domain/interfaces/http-response.interface.ts</code>
+            <code>src/domain/pipes/validation.pipe.ts</code>
         </p>
 
 
@@ -74,11 +74,16 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>Author Moeid Heidari
-Date 12 May 2022</p>
+                <p>env variables validation pipeline</p>
 
             </p>
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                    <code>ValidatorOptions</code>
+            </p>
 
         <section>
             <h3 id="index">Index</h3>
@@ -93,33 +98,24 @@ Date 12 May 2022</p>
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#data" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#disableErrorMessages" 
 >
-                                            data
+                                            disableErrorMessages
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#description" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#exceptionFactory" 
 >
-                                            description
+                                            exceptionFactory
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#message" 
+                                            <span class="modifier">Optional</span>
+                                        <a href="#transform" 
 >
-                                            message
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#status" 
->
-                                            status
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#type" 
->
-                                            type
+                                            transform
                                         </a>
                                 </li>
                             </ul>
@@ -137,9 +133,9 @@ Date 12 May 2022</p>
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="data"></a>
-                                        <span class="name "><b>data</b>
-                                            <a href="#data">
+                                        <a name="disableErrorMessages"></a>
+                                        <span class="name "><b>disableErrorMessages</b>
+                                            <a href="#disableErrorMessages">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -147,7 +143,7 @@ Date 12 May 2022</p>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>data:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                        <code>disableErrorMessages:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -155,18 +151,23 @@ Date 12 May 2022</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
                                         </td>
                                     </tr>
 
 
 
 
-
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Represents the actual data which is returned by the API. In case of empty response we will have it empty also.</p>
+                                    <div class="io-description"><p>If error messages should be disabled</p>
 </div>
                                 </td>
                             </tr>
@@ -176,9 +177,9 @@ Date 12 May 2022</p>
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="description"></a>
-                                        <span class="name "><b>description</b>
-                                            <a href="#description">
+                                        <a name="exceptionFactory"></a>
+                                        <span class="name "><b>exceptionFactory</b>
+                                            <a href="#exceptionFactory">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -186,7 +187,7 @@ Date 12 May 2022</p>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>description:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>exceptionFactory:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -194,18 +195,23 @@ Date 12 May 2022</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
 
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
                                         </td>
                                     </tr>
 
 
 
 
-
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Represents a full description about the response (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status</a>)</p>
+                                    <div class="io-description"><p>Exception factory</p>
 </div>
                                 </td>
                             </tr>
@@ -215,9 +221,9 @@ Date 12 May 2022</p>
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="message"></a>
-                                        <span class="name "><b>message</b>
-                                            <a href="#message">
+                                        <a name="transform"></a>
+                                        <span class="name "><b>transform</b>
+                                            <a href="#transform">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -225,7 +231,7 @@ Date 12 May 2022</p>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>message:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>transform:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -233,96 +239,23 @@ Date 12 May 2022</p>
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
-
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Represents a short message about the response status.</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="status"></a>
-                                        <span class="name "><b>status</b>
-                                            <a href="#status">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>status:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-</code>
-                                    </td>
-                                </tr>
-
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                                            <i>Optional</i>
                                         </td>
                                     </tr>
 
 
 
 
-
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Represents the status code of the http response(<a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">https://en.wikipedia.org/wiki/List_of_HTTP_status_codes</a>).</p>
-</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="type"></a>
-                                        <span class="name "><b>type</b>
-                                            <a href="#type">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>type:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-description"><p>Represents the type of the response</p>
+                                    <div class="io-description"><p>If it should be transformed</p>
 </div>
                                 </td>
                             </tr>
@@ -333,27 +266,23 @@ Date 12 May 2022</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface HttpResponse {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ValidationError, ValidatorOptions } from &#x27;class-validator&#x27;;
+/**
+ * env variables validation pipeline
+ */
+export interface ValidationPipeOptions extends ValidatorOptions {
   /**
-   * Represents the type of the response
+   * If it should be transformed
    */
-  type: string;
+  transform?: boolean;
   /**
-   * Represents the status code of the http response(https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+   * If error messages should be disabled
    */
-  status: number;
+  disableErrorMessages?: boolean;
   /**
-   * Represents a short message about the response status.
+   * Exception factory
    */
-  message: string;
-  /**
-   * Represents a full description about the response (https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-   */
-  description: string;
-  /**
-   * Represents the actual data which is returned by the API. In case of empty response we will have it empty also.
-   */
-  data: any;
+  exceptionFactory?: (errors: ValidationError[]) &#x3D;&gt; any;
 }
 </code></pre>
     </div>
@@ -392,7 +321,7 @@ Date 12 May 2022</p>
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'HttpResponse.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ValidationPipeOptions.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

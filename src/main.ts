@@ -6,9 +6,12 @@ import morgan from 'morgan';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './infrastructure/modules/app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { SwaggerModule, DocumentBuilder, SwaggerDocumentOptions } from '@nestjs/swagger';
 import { ConfigService } from '@nestjs/config';
-
+/**
+ * Main entry point of the application
+ * @returns Nothing
+ */
 async function bootstrap() {
   // Http Server
   const app = await NestFactory.create(AppModule);
@@ -20,11 +23,15 @@ async function bootstrap() {
     })
   );
 
+  /**
+   * Configuration of the Swagger document
+   */
   const config = new DocumentBuilder()
     .setTitle('intersection service')
     .setDescription('A service to calculte IUO based on provided bounding boxes')
     .setVersion('1.0')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
@@ -41,5 +48,5 @@ async function bootstrap() {
     return;
   }
 }
-
-bootstrap();
+ //==================================================================================================================================
+ bootstrap();

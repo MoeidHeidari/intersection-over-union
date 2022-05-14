@@ -5,7 +5,9 @@
 import morgan from 'morgan';
 import { NestFactory } from '@nestjs/core';
 import { SeederModule } from './infrastructure/modules/seeder.module';
-
+/**
+ * Seeder Bootstrap function
+ */
 async function bootstrap() {
   // Http Server
   const app = await NestFactory.create(SeederModule);
@@ -14,5 +16,5 @@ async function bootstrap() {
 
   await app.init();
 }
-
+//==================================================================================================================================
 bootstrap();

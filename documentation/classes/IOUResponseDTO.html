@@ -29,7 +29,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -41,9 +41,11 @@
 
 
 
+
+
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li >RolesGuard</li>
+  <li>Classes</li>
+  <li >IOUResponseDTO</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,41 +58,40 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/application/dtos/iou.response.dto.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
             </p>
             <p class="comment">
-                <code>src/domain/guards/roles.guard.ts</code>
+                <p>IOU response DTO</p>
+
             </p>
 
 
-                <p class="comment">
-                <h3>Description</h3>
-                </p>
-                <p class="comment">
-                    <p>roles guard</p>
-
-                </p>
 
 
-
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>Properties</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#canActivate" >canActivate</a>
+                                <a href="#iou" >iou</a>
                             </li>
                         </ul>
                     </td>
@@ -100,28 +101,29 @@
 
 
 
+
         </tbody>
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(reflector: Reflector)</code>
+<code>constructor(properties: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/domain/guards/roles.guard.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/application/dtos/iou.response.dto.ts:24</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>contructs the role guard service</p>
+                            <div class="io-description"><p>Contructs the DTO based on the provided properties after validation success.</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -136,10 +138,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>reflector</td>
+                                                        <td>properties</td>
                                                   
                                                         <td>
-                                                                    <code>Reflector</code>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -147,7 +149,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>reflector of the guard</p>
+                                                                <p>list of allowed properties</p>
 
                                                         </td>
                                                 </tr>
@@ -160,136 +162,97 @@
         </table>
 </section>
 
-                <section>
+            <section>
     
-    <h3 id="methods">
-        Methods
+    <h3 id="inputs">
+        Properties
     </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="canActivate"></a>
+                    <a name="iou"></a>
                     <span class="name">
-                        <span ><b>canActivate</b></span>
-                        <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>iou</b></span>
+                        <a href="#iou"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @IsDefined()<br />@IsNotEmpty()<br />@ApiProperty({example: &#x27;0.526&#x27;, description: &#x27;Calculated IUO&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/application/dtos/iou.response.dto.ts:24</a></div>
+                        </td>
+                    </tr>
+
             <tr>
                 <td class="col-md-4">
-<code>canActivate(context: ExecutionContext)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/domain/guards/roles.guard.ts:27</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>checks if the user has allowed permission (role)</p>
+                    <div class="io-description"><p>Calculated IOU result value</p>
 </div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                    <td>Description</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>context</td>
-                                    <td>
-                                            <code>ExecutionContext</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>context of the guard (actual information)</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        <p>returns true if the user has appropriate role</p>
-
-                    </div>
                 </td>
             </tr>
+
         </tbody>
     </table>
 </section>
-        </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, CanActivate, ExecutionContext } from &#x27;@nestjs/common&#x27;;
-import { Reflector } from &#x27;@nestjs/core&#x27;;
-import { Roles as Role } from &#x27;../enums&#x27;;
-import { ROLES_KEY } from &#x27;../decorators&#x27;;
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty } from &#x27;@nestjs/swagger&#x27;;
+import { IsDefined, IsNotEmpty } from &#x27;class-validator&#x27;;
 /**
- * roles guard
+ * List of allowed properties in this DTO
  */
-@Injectable()
-export class RolesGuard implements CanActivate {
-  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+const allowedProperties &#x3D; [&#x27;iou&#x27;];
+/**
+ * IOU response DTO
+ */
+export class IOUResponseDTO {
   /**
-   * contructs the role guard service
-   * @param reflector reflector of the guard
+   * Calculated IOU result value
    */
-  constructor(private reflector: Reflector) {}
-
-  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  @IsDefined()
+  @IsNotEmpty()
+  @ApiProperty({
+    example: &#x27;0.526&#x27;,
+    description: &#x27;Calculated IUO&#x27;,
+  })
+  iou: number;
   /**
-   * checks if the user has allowed permission (role)
-   * @param context context of the guard (actual information)
-   * @returns returns true if the user has appropriate role
+   * Contructs the DTO based on the provided properties after validation success.
+   * @param properties list of allowed properties
    */
-  canActivate(context: ExecutionContext): boolean {
-    const requiredRoles &#x3D; this.reflector.getAllAndOverride&lt;Role[]&gt;(ROLES_KEY, [
-      context.getHandler(),
-      context.getClass(),
-    ]);
-    if (!requiredRoles) {
-      return true;
-    }
-
-    const { user } &#x3D; context.switchToHttp().getRequest();
-
-    return user.roles.some((role: Role) &#x3D;&gt; requiredRoles.includes(role));
+  constructor(properties: any &#x3D; {}) {
+    Object.keys(properties).forEach((key: string) &#x3D;&gt; {
+      if (allowedProperties.includes(key)) this[key as keyof this] &#x3D; properties[key];
+    });
   }
-
-  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
 }
 </code></pre>
-        </div>
+    </div>
 </div>
-
-
 
 
 
@@ -324,8 +287,8 @@ export class RolesGuard implements CanActivate {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'RolesGuard.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'IOUResponseDTO.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
