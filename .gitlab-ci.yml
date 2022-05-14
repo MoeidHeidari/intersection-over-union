@@ -32,7 +32,7 @@ test:
     - npm test
 
 deploy:
-    stage: deploy
+    stage: .post
     rules:
     - if: '$CI_COMMIT_BRANCH != "master"'
     script:
