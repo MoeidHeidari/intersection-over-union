@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: moeidheidari/intersection:v1.0.0
+  repository: registry.gitlab.com/moeidtopcoder/intersection-over-union:latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ''

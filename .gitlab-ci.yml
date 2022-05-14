@@ -30,9 +30,10 @@ test:
     - npm run format
     - npm run lint
     - npm test
-    
+
 build image:
     image: docker:20.10.10
+    stage: deploy
     services:
         - docker:20.10.10-dind
     rules:
