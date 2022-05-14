@@ -40,11 +40,6 @@ spec:
               secretKeyRef:
                 name: app
                 key: NODE_PORT
-          - name: PORT
-            valueFrom:
-              secretKeyRef:
-                name: app
-                key: PORT
           - name: DECIMAL_PLACES
             valueFrom:
               secretKeyRef:

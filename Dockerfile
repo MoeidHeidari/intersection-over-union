@@ -17,6 +17,12 @@ FROM node:12.19.0-alpine3.9 as production
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
+ARG NODE_PORT=8085
+ENV NODE_PORT=${NODE_PORT}
+
+ARG DECIMAL_PLACES=3
+ENV DECIMAL_PLACES=${DECIMAL_PLACES}
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
