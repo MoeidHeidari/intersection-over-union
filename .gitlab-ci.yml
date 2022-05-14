@@ -30,12 +30,15 @@ test:
     - npm run format
     - npm run lint
     - npm test
-
-deploy:
-    stage: .post
+    
+build image:
+    image: docker:20.10.10
+    services:
+        - docker:20.10.10-dind
     rules:
-    - if: '$CI_COMMIT_BRANCH != "main"'
+        - if: $CI_PIPELINE_SOURCE == "schedule"
+        - if: '$CI_COMMIT_BRANCH != "main"'       
     script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker build -t $CI_REGISTRY/intersection:latest .
-    - docker push $CI_REGISTRY/intersection:latest
+        - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker push $CI_REGISTRY_IMAGE
