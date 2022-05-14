@@ -2,7 +2,7 @@
  * Author Moeid Heidari
  * Date 13 May 2022
  */
-import { HttpStatus, Injectable, Inject } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { BoundingBoxDTO, IOUResponseDTO, IOURquestDTO } from '../../application/dtos';
 import { EnvObjects, IntersectionOptions } from '../../infrastructure/config';

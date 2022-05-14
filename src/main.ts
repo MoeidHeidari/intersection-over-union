@@ -32,9 +32,7 @@ async function bootstrap() {
     const configService = app.get(ConfigService);
     const NODE_PORT = configService.get('NODE_PORT');
     if (!NODE_PORT) {
-      throw new Error(
-        "Please define the node port as an environmental variable"
-      );
+      throw new Error('Please define the node port as an environmental variable');
     }
     await app.listen(NODE_PORT, () => Logger.log('HTTP Service is listening on port ' + String(NODE_PORT), 'App'));
   } catch (error) {

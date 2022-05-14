@@ -5,7 +5,6 @@
 import { Controller, Post, Body, HttpStatus, HttpCode, Get, Param } from '@nestjs/common';
 import { HttpResponse } from '../../domain/interfaces';
 import { Public } from '../../domain/decorators';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { IntersectionService } from '../../domain/services/intersection.service';
 import { IOURquestDTO } from '../dtos';
 @Controller('api/v1/intersection')

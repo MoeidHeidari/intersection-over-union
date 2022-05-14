@@ -3,7 +3,7 @@
  * Date 12 May 2022
  */
 import { plainToClass } from 'class-transformer';
-import { validateSync, IsInt, IsOptional, Min, Max } from 'class-validator';
+import { validateSync, IsOptional } from 'class-validator';
 
 /**
  * env vatiables
@@ -19,7 +19,6 @@ class EnvironmentVariables {
  * @returns validated config
  */
 export function validate(config: Record<string, unknown>) {
-  
   const validatedConfig = plainToClass(EnvironmentVariables, config, { enableImplicitConversion: true });
   const errors = validateSync(validatedConfig, { skipMissingProperties: false });
 

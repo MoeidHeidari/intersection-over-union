@@ -13,11 +13,6 @@ import { HttpResponse } from '../../interfaces';
  */
 @Injectable()
 export class HttpResponseService {
-  /**
-   * HTTP response service constructor
-   */
-  constructor() {}
-
   //==================================================================================================
   /**
    * gets the message
@@ -61,7 +56,7 @@ export class HttpResponseService {
    */
   generate(
     status: number,
-    data: object = {},
+    data: unknown = {},
     message: string = this.getMessage(status),
     description: string = this.getDescription(status)
   ): HttpResponse {

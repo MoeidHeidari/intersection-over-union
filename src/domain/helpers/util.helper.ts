@@ -6,8 +6,6 @@ import { HttpStatus } from '@nestjs/common';
 import { validate } from 'class-validator';
 import { HttpResponseException } from '../exceptions';
 
-export const nameOf = (f: Function) => f.toString().replace(/(\(\) => )/g, '');
-
 //==================================================================================================
 /**
  * processes http error that was throwed by service
@@ -58,7 +56,7 @@ export function processHttpError(error: any, logger: any) {
  * @param dto dto
  * @param httpResponseGenerator http response service
  */
-export async function validateDTO(dto: Object, httpResponseGenerator: any): Promise<any> {
+export async function validateDTO(dto: any, httpResponseGenerator: any): Promise<any> {
   const errors = await validate(dto);
 
   if (errors.length) throw new HttpResponseException(httpResponseGenerator.generate(HttpStatus.BAD_REQUEST, errors));
@@ -72,7 +70,7 @@ export async function validateDTO(dto: Object, httpResponseGenerator: any): Prom
  * @param dto dto
  * @param logger logger service
  */
-export async function validateOutputDTO(dto: Object, logger: any): Promise<any> {
+export async function validateOutputDTO(dto: any, logger: any): Promise<any> {
   const errors = await validate(dto);
 
   if (errors.length) {
