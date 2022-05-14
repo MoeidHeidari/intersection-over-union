@@ -40,11 +40,11 @@ spec:
               secretKeyRef:
                 name: app
                 key: NODE_PORT
-          - name: PORT
+          - name: DECIMAL_PLACES
             valueFrom:
               secretKeyRef:
                 name: app
-                key: PORT
+                key: DECIMAL_PLACES
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

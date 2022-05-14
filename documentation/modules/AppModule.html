@@ -143,21 +143,20 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
-import { APP_GUARD, APP_INTERCEPTOR } from &quot;@nestjs/core&quot;;
+import { APP_GUARD, APP_INTERCEPTOR } from &#x27;@nestjs/core&#x27;;
 import { ConfigModule } from &#x27;@nestjs/config&#x27;;
 import { configuration } from &#x27;../config/env.objects&#x27;;
 import { validate } from &#x27;../config/env.validation&#x27;;
 
-import { LoggerInterceptor } from &#x27;../../domain/interceptors&#x27;
-import { RolesGuard } from &#x27;../../domain/guards&#x27;
+import { LoggerInterceptor } from &#x27;../../domain/interceptors&#x27;;
+import { RolesGuard } from &#x27;../../domain/guards&#x27;;
 import * as modules from &#x27;../../domain/modules&#x27;;
 import { CommonModule } from &#x27;./common/common.module&#x27;;
 
 /**
  * application modules list
  */
-const modulesList &#x3D;
-  Object.keys(modules).map((moduleIndex) &#x3D;&gt; modules[moduleIndex as keyof typeof modules]);
+const modulesList &#x3D; Object.keys(modules).map(moduleIndex &#x3D;&gt; modules[moduleIndex as keyof typeof modules]);
 
 /**
  * application module
@@ -172,21 +171,21 @@ const modulesList &#x3D;
       cache: true,
       expandVariables: true,
     }),
-    ...modulesList
+    ...modulesList,
   ],
   providers: [
     {
       provide: APP_GUARD,
-      useClass: RolesGuard
+      useClass: RolesGuard,
     },
     {
       provide: APP_INTERCEPTOR,
-      useClass: LoggerInterceptor
+      useClass: LoggerInterceptor,
     },
   ],
   controllers: [],
 })
-export class AppModule { }
+export class AppModule {}
 </code></pre>
     </div>
 </div>

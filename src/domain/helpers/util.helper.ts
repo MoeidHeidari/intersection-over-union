@@ -2,11 +2,9 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { HttpStatus } from "@nestjs/common";
-import { validate } from "class-validator";
-import { HttpResponseException } from "../exceptions";
-
-export const nameOf = (f: Function) => (f).toString().replace(/(\(\) => )/g, '');
+import { HttpStatus } from '@nestjs/common';
+import { validate } from 'class-validator';
+import { HttpResponseException } from '../exceptions';
 
 //==================================================================================================
 /**
@@ -14,7 +12,7 @@ export const nameOf = (f: Function) => (f).toString().replace(/(\(\) => )/g, '')
  * @param error error (exception or string)
  * @param logger logger service
  */
- export function processMicroserviceHttpError(error: any, logger: any) {
+export function processMicroserviceHttpError(error: any, logger: any) {
   let statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
   let message = undefined;
   let description = undefined;
@@ -28,16 +26,14 @@ export const nameOf = (f: Function) => (f).toString().replace(/(\(\) => )/g, '')
     if (body.data) data = body.data;
     if (body.message) message = body.message;
     if (body.description) description = body.description;
-    return { statusCode, message, description, data }
+    return { statusCode, message, description, data };
   }
 
-  if (typeof (error) == "string" || error instanceof Object)
-    logger.error(error);
+  if (typeof error == 'string' || error instanceof Object) logger.error(error);
 
-  if (error instanceof Error)
-    logger.error(error.message, error);
+  if (error instanceof Error) logger.error(error.message, error);
 
-  return { statusCode, message, description, data }
+  return { statusCode, message, description, data };
 }
 
 //==================================================================================================
@@ -47,28 +43,23 @@ export const nameOf = (f: Function) => (f).toString().replace(/(\(\) => )/g, '')
  * @param logger logger service
  */
 export function processHttpError(error: any, logger: any) {
-  if (error instanceof HttpResponseException)
-    throw error;
+  if (error instanceof HttpResponseException) throw error;
 
-  if (typeof (error) == "string")
-    logger.error(error);
+  if (typeof error == 'string') logger.error(error);
 
-  if (error instanceof Error)
-    logger.error(error.message, error);
+  if (error instanceof Error) logger.error(error.message, error);
 }
 
 //==================================================================================================
 /**
  * validates dto and returns bad request if it is wrong
  * @param dto dto
- * @param httpResponseGenerator http response service 
+ * @param httpResponseGenerator http response service
  */
-export async function validateDTO(dto: Object, httpResponseGenerator: any): Promise<any> {
+export async function validateDTO(dto: any, httpResponseGenerator: any): Promise<any> {
   const errors = await validate(dto);
 
-  if (errors.length) throw new HttpResponseException(
-    httpResponseGenerator.generate(HttpStatus.BAD_REQUEST, errors)
-  );
+  if (errors.length) throw new HttpResponseException(httpResponseGenerator.generate(HttpStatus.BAD_REQUEST, errors));
 
   return dto;
 }
@@ -79,12 +70,12 @@ export async function validateDTO(dto: Object, httpResponseGenerator: any): Prom
  * @param dto dto
  * @param logger logger service
  */
- export async function validateOutputDTO(dto: Object, logger: any): Promise<any> {
+export async function validateOutputDTO(dto: any, logger: any): Promise<any> {
   const errors = await validate(dto);
 
   if (errors.length) {
-    for (let i in errors) {
-      logger.error(errors[i])
+    for (const i in errors) {
+      logger.error(errors[i]);
     }
   }
 
