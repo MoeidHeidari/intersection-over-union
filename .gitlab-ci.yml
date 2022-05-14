@@ -22,7 +22,7 @@ build:
   stage: build
   script:
     - npm install
-    - npm build --if-present
+    - npm run build --if-present
 
 test:
   stage: test

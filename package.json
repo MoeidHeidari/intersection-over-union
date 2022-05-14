@@ -1,6 +1,6 @@
 {
     "name": "intersection",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "intersection is a serice that provides APIs to measure the overlap between two bounding boxes.",
     "author": "Moeid Heidari",
     "scripts": {
