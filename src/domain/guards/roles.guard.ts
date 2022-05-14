@@ -2,10 +2,10 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
-import { Reflector } from "@nestjs/core";
-import { Roles as Role} from "../enums";
-import { ROLES_KEY } from "../decorators";
+import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Reflector } from '@nestjs/core';
+import { Roles as Role } from '../enums';
+import { ROLES_KEY } from '../decorators';
 /**
  * roles guard
  */
@@ -16,8 +16,8 @@ export class RolesGuard implements CanActivate {
    * contructs the role guard service
    * @param reflector reflector of the guard
    */
-  constructor(private reflector: Reflector) { }
-  
+  constructor(private reflector: Reflector) {}
+
   //==================================================================================================
   /**
    * checks if the user has allowed permission (role)
@@ -27,7 +27,7 @@ export class RolesGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const requiredRoles = this.reflector.getAllAndOverride<Role[]>(ROLES_KEY, [
       context.getHandler(),
-      context.getClass()
+      context.getClass(),
     ]);
     if (!requiredRoles) {
       return true;

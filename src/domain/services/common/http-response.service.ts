@@ -1,7 +1,12 @@
-import { HttpStatus, Injectable } from "@nestjs/common";
-import { HttpResponseDescriptions, HttpResponseMessages, HttpResponseTypes, HttpResponseTypesCodes } from "../../enums/httpResponse";
+import { HttpStatus, Injectable } from '@nestjs/common';
+import {
+  HttpResponseDescriptions,
+  HttpResponseMessages,
+  HttpResponseTypes,
+  HttpResponseTypesCodes,
+} from '../../enums/httpResponse';
 
-import { HttpResponse } from "../../interfaces";
+import { HttpResponse } from '../../interfaces';
 
 /**
  * HTTP response service
@@ -11,7 +16,7 @@ export class HttpResponseService {
   /**
    * HTTP response service constructor
    */
-  constructor() { }
+  constructor() {}
 
   //==================================================================================================
   /**
@@ -20,8 +25,7 @@ export class HttpResponseService {
    * @returns message
    */
   private getMessage(status: number): string {
-    return HttpResponseMessages[HttpStatus[status]
-      .toString() as keyof typeof HttpResponseMessages];
+    return HttpResponseMessages[HttpStatus[status].toString() as keyof typeof HttpResponseMessages];
   }
 
   //==================================================================================================
@@ -31,8 +35,7 @@ export class HttpResponseService {
    * @returns description
    */
   private getDescription(status: number): string {
-    return HttpResponseDescriptions[HttpStatus[status]
-      .toString() as keyof typeof HttpResponseMessages];
+    return HttpResponseDescriptions[HttpStatus[status].toString() as keyof typeof HttpResponseMessages];
   }
 
   //==================================================================================================
@@ -42,8 +45,9 @@ export class HttpResponseService {
    * @returns type
    */
   private getType(status: number): string {
-    return HttpResponseTypes[HttpResponseTypesCodes[Math.floor(status / 100)]
-      .toString() as keyof typeof HttpResponseTypes];
+    return HttpResponseTypes[
+      HttpResponseTypesCodes[Math.floor(status / 100)].toString() as keyof typeof HttpResponseTypes
+    ];
   }
 
   //==================================================================================================
@@ -59,15 +63,14 @@ export class HttpResponseService {
     status: number,
     data: object = {},
     message: string = this.getMessage(status),
-    description: string = this.getDescription(status))
-    : HttpResponse {
-
+    description: string = this.getDescription(status)
+  ): HttpResponse {
     const response: HttpResponse = {
       type: this.getType(status),
       status: status,
       message: message,
       description: description,
-      data: data
+      data: data,
     };
 
     return response;
