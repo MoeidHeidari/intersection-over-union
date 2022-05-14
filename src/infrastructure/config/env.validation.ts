@@ -10,9 +10,6 @@ import { validateSync, IsInt, IsOptional, Min, Max } from 'class-validator';
  */
 class EnvironmentVariables {
   @IsOptional()
-  @IsInt()
-  @Min(1)
-  @Max(10)
   DECIMAL_PLACES = 3;
 }
 
@@ -22,6 +19,7 @@ class EnvironmentVariables {
  * @returns validated config
  */
 export function validate(config: Record<string, unknown>) {
+  
   const validatedConfig = plainToClass(EnvironmentVariables, config, { enableImplicitConversion: true });
   const errors = validateSync(validatedConfig, { skipMissingProperties: false });
 
