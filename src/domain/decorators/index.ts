@@ -2,4 +2,5 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-export * from './roles.decorator'
+export * from './roles.decorator';
+export * from './public.decorator';

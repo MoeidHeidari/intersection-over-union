@@ -4,7 +4,7 @@ build:
   local:
     useBuildkit: true
   artifacts:
-  - image: brianfiszman/nestjs-test-app
+  - image: registry.gitlab.com/moeidtopcoder/intersection-over-union:latest
 deploy:
   helm:
     releases:
@@ -16,7 +16,7 @@ deploy:
       - ./k8s/values.yaml
       - ./k8s/secrets.yaml
       artifactOverrides:
-        image: brianfiszman/nestjs-test-app
+        image: registry.gitlab.com/moeidtopcoder/intersection-over-union:latest
       imageStrategy:
         helm: {}
 

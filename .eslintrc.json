@@ -26,25 +26,13 @@
       "max-len": [
         "error",
         {
-          "code": 120,
+          "code": 400,
           "ignoreUrls": true,
           "ignoreComments": false
         }
       ],
       "no-unused-vars": 1,
       "no-case-declarations": "off",
-      "no-async-promise-executor": "off",
-      "@typescript-eslint/ban-types": [
-        "error",
-        {
-          "types": {
-            "{}": {
-              "message": "Use object instead",
-              "fixWith": "object"
-            }
-          }
-        }
-      ],
-      "@typescript-eslint/no-explicit-any": "off"
+      "no-async-promise-executor": "off"
     }
   }

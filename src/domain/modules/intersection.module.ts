@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
-import { CommonModule } from '../../infrastructure/modules/common/common.module'
+import { CommonModule } from '../../infrastructure/modules/common/common.module';
 import { IntersectionController } from '../../application/controllers';
 import { IntersectionService } from '../services/intersection.service';
- 
 /**
  * User module
  */
@@ -10,6 +9,6 @@ import { IntersectionService } from '../services/intersection.service';
   imports: [CommonModule],
   controllers: [IntersectionController],
   providers: [IntersectionService],
-  exports: [],
+  exports: [IntersectionService],
 })
 export class IntersectionModule {}

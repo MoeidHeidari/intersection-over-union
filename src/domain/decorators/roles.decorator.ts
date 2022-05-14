@@ -2,13 +2,13 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { SetMetadata } from "@nestjs/common";
-import { Roles as Role} from "../enums";
+import { SetMetadata } from '@nestjs/common';
+import { Roles as Role } from '../enums';
 
 /**
  * keys of roles
  */
-export const ROLES_KEY = "roles";
+export const ROLES_KEY = 'roles';
 /**
  * retuns a list of defined roles
  * @param roles all the possible roles inside the enum

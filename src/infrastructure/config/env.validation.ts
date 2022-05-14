@@ -3,17 +3,14 @@
  * Date 12 May 2022
  */
 import { plainToClass } from 'class-transformer';
-import { validateSync,IsInt,IsOptional,Min,Max } from 'class-validator';
+import { validateSync, IsOptional } from 'class-validator';
 
 /**
  * env vatiables
  */
 class EnvironmentVariables {
   @IsOptional()
-  @IsInt()
-  @Min(1)
-  @Max(10)
-  DECIMAL_PLACES: number=1;
+  DECIMAL_PLACES = 3;
 }
 
 /**
