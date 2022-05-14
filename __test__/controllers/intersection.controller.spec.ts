@@ -15,7 +15,6 @@ describe('Intersector controller test', () => {
     handlIOUReuest: jest.fn(),
   };
 
-  
   beforeEach(async () => {
     const module = await Test.createTestingModule({
       controllers: [IntersectionController],

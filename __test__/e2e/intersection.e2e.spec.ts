@@ -224,7 +224,6 @@ describe('Intersection endpoints (e2e)', () => {
           },
         });
     });
-    
   });
 
   afterEach(async () => {

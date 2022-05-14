@@ -38,9 +38,6 @@ describe('intersection service', () => {
   const logger = new LoggerService(IntersectionService.name);
   const httpReponseService = new HttpResponseService();
 
-  afterAll(()=>{
-  
-  })
   beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
