@@ -92,9 +92,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#decimal_places" 
+                                        <a href="#number_of_decimal_places" 
 >
-                                            decimal_places
+                                            number_of_decimal_places
                                         </a>
                                 </li>
                             </ul>
@@ -112,9 +112,9 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="decimal_places"></a>
-                                        <span class="name "><b>decimal_places</b>
-                                            <a href="#decimal_places">
+                                        <a name="number_of_decimal_places"></a>
+                                        <span class="name "><b>number_of_decimal_places</b>
+                                            <a href="#number_of_decimal_places">
                                                 <span class="icon ion-ios-link"></span>
                                             </a>
                                         </span>
@@ -122,7 +122,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>decimal_places:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>number_of_decimal_places:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -160,29 +160,28 @@ expandEnvVariables();
  * options enum
  */
 export enum EnvObjects {
-    INTERSECTION_OPTIONS &#x3D; &#x27;IntersectionOptions&#x27;
+  INTERSECTION_OPTIONS &#x3D; &#x27;IntersectionOptions&#x27;,
 }
 //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
 /**
  * Intersection options
  */
-export interface IntersectionOptions{
-    /**
-     * represents the number of decimal places to calculate and return back the muserment of intersection.
-     */
-    decimal_places: number;
+export interface IntersectionOptions {
+  /**
+   * represents the number of decimal places to calculate and return back the muserment of intersection.
+   */
+  number_of_decimal_places: number;
 }
 
 /**
  * configuration function
  * @returns configuration taken from env
  */
- export const configuration &#x3D; (): any &#x3D;&gt; ({
-    IntersectionOptions: {
-      baseUri: process.env.DECIMAL_PLACES,
-    }
-  });
-
+export const configuration &#x3D; (): any &#x3D;&gt; ({
+  IntersectionOptions: {
+    number_of_decimal_places: process.env.DECIMAL_PLACES,
+  },
+});
 </code></pre>
     </div>
 </div>

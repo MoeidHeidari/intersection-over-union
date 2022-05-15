@@ -2,7 +2,7 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-export class BoundingBox {
+export interface BoundingBox {
   /**
    * left coordinate of the bounding box
    */

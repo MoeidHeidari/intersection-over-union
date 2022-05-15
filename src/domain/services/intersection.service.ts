@@ -10,18 +10,33 @@ import { HttpResponseException } from '../exceptions';
 import { processHttpError, validateDTO, validateOutputDTO } from '../helpers';
 import { HttpResponse } from '../interfaces';
 import { HttpResponseService, LoggerService } from './common';
-
+/**
+ * Intersection service
+ */
 @Injectable()
 export class IntersectionService {
+  /**
+   * Options for envs
+   */
   private options: any = this.configService.get<IntersectionOptions>(EnvObjects.INTERSECTION_OPTIONS);
   //===========================================================================================
+  /**
+   * Constructor of the intersection service class
+   * @param httpResponseService Http response service
+   * @param configService Config service
+   * @param logger Logger service
+   */
   constructor(
     private readonly httpResponseService: HttpResponseService,
     private readonly configService: ConfigService,
     private readonly logger: LoggerService
-  ) {}
+  ) { }
   //===========================================================================================
-
+  /**
+   * Handles the Intersection request
+   * @param boudings Bounding boxes
+   * @returns HTTPResponse
+   */
   async handlIOUReuest(boudings: IOURquestDTO): Promise<HttpResponse> {
     try {
       await validateDTO(boudings, this.httpResponseService);
@@ -41,6 +56,13 @@ export class IntersectionService {
     }
   }
   //===========================================================================================
+  /**
+   * Takes two bounding boxes and calculates the Intersection Over Union
+   * @param ground_truth_bounding_box ground truth bounding box
+   * @param Predicted_bounding_box predicted bounding box
+   * @param number_of_decimal_places number of decimal places to calculate the Intersection Over Union
+   * @returns number
+   */
   async calculateIOU(
     ground_truth_bounding_box: BoundingBoxDTO,
     Predicted_bounding_box: BoundingBoxDTO,

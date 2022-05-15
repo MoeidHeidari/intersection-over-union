@@ -131,7 +131,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>1</code>
+                        <i>Default value : </i><code>3</code>
                     </td>
                 </tr>
                 <tr>
@@ -139,7 +139,7 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @IsOptional()<br />@IsInt()<br />@Min(1)<br />@Max(10)<br />
+                            @IsOptional()<br />
                         </code>
                     </td>
                 </tr>
@@ -149,6 +149,12 @@
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Decimal places of the calculated IOU</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -165,17 +171,17 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { plainToClass } from &#x27;class-transformer&#x27;;
-import { validateSync,IsInt,IsOptional,Min,Max } from &#x27;class-validator&#x27;;
+import { validateSync, IsOptional } from &#x27;class-validator&#x27;;
 
 /**
  * env vatiables
  */
 class EnvironmentVariables {
+  /**
+   * Decimal places of the calculated IOU
+   */
   @IsOptional()
-  @IsInt()
-  @Min(1)
-  @Max(10)
-  DECIMAL_PLACES: number&#x3D;1;
+  DECIMAL_PLACES &#x3D; 3;
 }
 
 /**

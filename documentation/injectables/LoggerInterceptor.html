@@ -159,8 +159,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:30</a></div>
                 </td>
             </tr>
 
@@ -254,8 +254,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:62</a></div>
                 </td>
             </tr>
 
@@ -349,8 +349,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="109"
-                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:109</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:103</a></div>
                 </td>
             </tr>
 
@@ -500,8 +500,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="128"
-                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:128</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:125</a></div>
                 </td>
             </tr>
 
@@ -637,8 +637,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="89"
-                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:89</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:83</a></div>
                 </td>
             </tr>
 
@@ -742,7 +742,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:26</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/domain/interceptors/logger.interceptor.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -761,140 +761,140 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    CallHandler,
-    ExecutionContext,
-    Injectable,
-    NestInterceptor
-} from &quot;@nestjs/common&quot;;
-import { Observable } from &quot;rxjs&quot;;
-import { tap } from &quot;rxjs/operators&quot;;
-import { Request, Response } from &quot;express&quot;;
-import { MqttContext } from &quot;@nestjs/microservices&quot;;
-import { LoggerService } from &quot;../services/common&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from &#x27;@nestjs/common&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { tap } from &#x27;rxjs/operators&#x27;;
+import { Request, Response } from &#x27;express&#x27;;
+import { MqttContext } from &#x27;@nestjs/microservices&#x27;;
+import { LoggerService } from &#x27;../services/common&#x27;;
 ////////////////////////////////////////////////////////////////////////
 /**
  * Logs the requests
  */
 @Injectable()
 export class LoggerInterceptor implements NestInterceptor {
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * logs requests for the service
-     */
-    private readonly logger: LoggerService &#x3D; new LoggerService(LoggerInterceptor.name);
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * logs requests for the service
+   */
+  private readonly logger: LoggerService &#x3D; new LoggerService(LoggerInterceptor.name);
 
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * intercept handler
-     * @param context context
-     * @param next next call
-     * @returns handler
-     */
-    intercept(context: ExecutionContext, next: CallHandler): Observable&lt;any&gt; {
-        const startTime &#x3D; Date.now();
-        const contextType &#x3D; context.getType();
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * intercept handler
+   * @param context context
+   * @param next next call
+   * @returns handler
+   */
+  intercept(context: ExecutionContext, next: CallHandler): Observable&lt;any&gt; {
+    const startTime &#x3D; Date.now();
+    const contextType &#x3D; context.getType();
 
-        return next.handle().pipe(
-            tap(
-                () &#x3D;&gt; {
-                    if (contextType &#x3D;&#x3D;&#x3D; &quot;http&quot;) {
-                        this.logHttpRequest(context, startTime);
-                    }
-                    else if (contextType &#x3D;&#x3D;&#x3D; &quot;rpc&quot;) {
-                        this.logRpcMessage(context, startTime);
-                    }
-                },
-                (error: Error) &#x3D;&gt; {
-                    if (contextType &#x3D;&#x3D;&#x3D; &quot;http&quot;) {
-                        this.logHttpRequest(context, startTime);
-                    } else {
-                        const reqTime &#x3D; Date.now() - startTime;
-                        this.logger.log(&#x60;[${error.name}] ${error.message} ${reqTime}ms&#x60;);
-                    }
-                }
-            )
-        );
-    }
-
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * logs the HTTP requests
-     * @param context context
-     * @param startTime start time
-     * @returns nothing
-     */
-    private logHttpRequest(context: ExecutionContext, startTime: number) {
-        if (context.getType() !&#x3D;&#x3D; &quot;http&quot;) return;
-        const reqTime &#x3D; Date.now() - startTime;
-        const controllerName &#x3D; context.getClass().name;
-        const handlerName &#x3D; context.getHandler().name;
-        const request &#x3D; context.switchToHttp().getRequest&lt;Request&gt;();
-        const response &#x3D; context.switchToHttp().getResponse&lt;Response&gt;();
-        const { url, method } &#x3D; request;
-        const { statusCode } &#x3D; response;
-        this.logger.log(
-            &#x60;[HTTP] ${method.toUpperCase()} ${url} ${statusCode} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;
-        );
-    }
-
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * logs the RTC requests
-     * @param context context
-     * @param startTime start time
-     * @returns nothing
-     */
-    private logRpcMessage(context: ExecutionContext, startTime: number) {
-        if (context.getType() !&#x3D;&#x3D; &quot;rpc&quot;) return;
-        const reqTime &#x3D; Date.now() - startTime;
-        const controllerName &#x3D; context.getClass().name;
-        const handlerName &#x3D; context.getHandler().name;
-        const args &#x3D; context.getArgs();
-        if (args[1] &amp;&amp; args[1] instanceof MqttContext) {
-            this.logMqttMessage(args[1], startTime, reqTime, controllerName, handlerName);
-        } else {
-            this.logKafkaMessage(context, startTime, reqTime, controllerName, handlerName, args);
+    return next.handle().pipe(
+      tap(
+        () &#x3D;&gt; {
+          if (contextType &#x3D;&#x3D;&#x3D; &#x27;http&#x27;) {
+            this.logHttpRequest(context, startTime);
+          } else if (contextType &#x3D;&#x3D;&#x3D; &#x27;rpc&#x27;) {
+            this.logRpcMessage(context, startTime);
+          }
+        },
+        (error: Error) &#x3D;&gt; {
+          if (contextType &#x3D;&#x3D;&#x3D; &#x27;http&#x27;) {
+            this.logHttpRequest(context, startTime);
+          } else {
+            const reqTime &#x3D; Date.now() - startTime;
+            this.logger.log(&#x60;[${error.name}] ${error.message} ${reqTime}ms&#x60;);
+          }
         }
+      )
+    );
+  }
+
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * logs the HTTP requests
+   * @param context context
+   * @param startTime start time
+   * @returns nothing
+   */
+  private logHttpRequest(context: ExecutionContext, startTime: number) {
+    if (context.getType() !&#x3D;&#x3D; &#x27;http&#x27;) return;
+    const reqTime &#x3D; Date.now() - startTime;
+    const controllerName &#x3D; context.getClass().name;
+    const handlerName &#x3D; context.getHandler().name;
+    const request &#x3D; context.switchToHttp().getRequest&lt;Request&gt;();
+    const response &#x3D; context.switchToHttp().getResponse&lt;Response&gt;();
+    const { url, method } &#x3D; request;
+    const { statusCode } &#x3D; response;
+    this.logger.log(
+      &#x60;[HTTP] ${method.toUpperCase()} ${url} ${statusCode} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;
+    );
+  }
+
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * logs the RTC requests
+   * @param context context
+   * @param startTime start time
+   * @returns nothing
+   */
+  private logRpcMessage(context: ExecutionContext, startTime: number) {
+    if (context.getType() !&#x3D;&#x3D; &#x27;rpc&#x27;) return;
+    const reqTime &#x3D; Date.now() - startTime;
+    const controllerName &#x3D; context.getClass().name;
+    const handlerName &#x3D; context.getHandler().name;
+    const args &#x3D; context.getArgs();
+    if (args[1] &amp;&amp; args[1] instanceof MqttContext) {
+      this.logMqttMessage(args[1], startTime, reqTime, controllerName, handlerName);
+    } else {
+      this.logKafkaMessage(context, startTime, reqTime, controllerName, handlerName, args);
     }
+  }
 
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * logs the KAFKA requests
-     * @param context context
-     * @param startTime start time
-     * @returns nothing
-     */
-    private logKafkaMessage(context: ExecutionContext, startTime: number,
-        reqTime: number, controllerName: string, handlerName: string, args: any) {
-
-        for (const arg of args) {
-            if (!arg.args) {
-                this.logger.log(
-                    &#x60;[KAFKA] ${arg.partition} ${arg.topic} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;
-                );
-            }
-        }
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * logs the KAFKA requests
+   * @param context context
+   * @param startTime start time
+   * @returns nothing
+   */
+  private logKafkaMessage(
+    context: ExecutionContext,
+    startTime: number,
+    reqTime: number,
+    controllerName: string,
+    handlerName: string,
+    args: any
+  ) {
+    for (const arg of args) {
+      if (!arg.args) {
+        this.logger.log(&#x60;[KAFKA] ${arg.partition} ${arg.topic} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;);
+      }
     }
+  }
 
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-    /**
-     * logs the MQTT requests
-     * @param context context
-     * @param startTime start time
-     * @returns nothing
-     */
-    private logMqttMessage(context: MqttContext, startTime: number,
-        reqTime: number, controllerName: string, handlerName: string) {
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+  /**
+   * logs the MQTT requests
+   * @param context context
+   * @param startTime start time
+   * @returns nothing
+   */
+  private logMqttMessage(
+    context: MqttContext,
+    startTime: number,
+    reqTime: number,
+    controllerName: string,
+    handlerName: string
+  ) {
+    const packet &#x3D; context.getPacket();
+    this.logger.log(&#x60;[MQTT] ${packet.cmd} ${context.getTopic()} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;);
+  }
 
-        const packet &#x3D; context.getPacket();
-        this.logger.log(
-            &#x60;[MQTT] ${packet.cmd} ${context.getTopic()} [${controllerName}:${handlerName}] ${reqTime}ms&#x60;
-        );
-    }
-
-    //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-}</code></pre>
+  //&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+}
+</code></pre>
     </div>
 
 </div>

@@ -40,7 +40,7 @@ securityContext:
 
 service:
   type: NodePort
-  port: 8080
+  port: 7800
 
 ingress:
   enabled: false

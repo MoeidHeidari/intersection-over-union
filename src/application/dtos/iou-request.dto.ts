@@ -5,7 +5,14 @@
 import { IsDefined, IsNotEmptyObject, ValidateNested } from 'class-validator';
 import { BoundingBoxDTO } from './bounding-box.dto';
 import { Type } from 'class-transformer';
+import { ApiProperty } from '@nestjs/swagger';
+/**
+ * List of allowed properties in this DTO
+ */
 const allowedProperties = ['ground_truth_bounding_box', 'predicted_bounding_box'];
+/**
+ * IOU request DTO
+ */
 export class IOURquestDTO {
   /**
    * Containes the coordinates of the ground truth bounding box
@@ -14,6 +21,9 @@ export class IOURquestDTO {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => BoundingBoxDTO)
+  @ApiProperty({
+    description: 'ground_truth_bounding_box',
+  })
   ground_truth_bounding_box: BoundingBoxDTO;
 
   /**
@@ -23,6 +33,9 @@ export class IOURquestDTO {
   @IsNotEmptyObject()
   @ValidateNested()
   @Type(() => BoundingBoxDTO)
+  @ApiProperty({
+    description: 'predicted_bounding_box',
+  })
   predicted_bounding_box: BoundingBoxDTO;
 
   /**
