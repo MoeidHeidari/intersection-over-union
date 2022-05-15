@@ -67,6 +67,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CommonModule.html" data-type="entity-link" >CommonModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/HealthModule.html" data-type="entity-link" >HealthModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#controllers-links-module-HealthModule-b5aabe9a0d5f521ac122ccfc992289d8eb7b98b1702b05ae479193aceb6809957601977fe32ff497f96babc58feb13b235c6a06c50c4c0ed68866a8939ba74a6"' : 'data-target="#xs-controllers-links-module-HealthModule-b5aabe9a0d5f521ac122ccfc992289d8eb7b98b1702b05ae479193aceb6809957601977fe32ff497f96babc58feb13b235c6a06c50c4c0ed68866a8939ba74a6"' }>
+                                            <span class="icon ion-md-swap"></span>
+                                            <span>Controllers</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="controllers-links-module-HealthModule-b5aabe9a0d5f521ac122ccfc992289d8eb7b98b1702b05ae479193aceb6809957601977fe32ff497f96babc58feb13b235c6a06c50c4c0ed68866a8939ba74a6"' :
+                                            'id="xs-controllers-links-module-HealthModule-b5aabe9a0d5f521ac122ccfc992289d8eb7b98b1702b05ae479193aceb6809957601977fe32ff497f96babc58feb13b235c6a06c50c4c0ed68866a8939ba74a6"' }>
+                                            <li class="link">
+                                                <a href="controllers/HealthController.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HealthController</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
                                 <a href="modules/HttpResponseModule.html" data-type="entity-link" >HttpResponseModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
@@ -247,9 +264,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                         </ul>
                     </li>
-                        <li class="chapter">
-                            <a data-type="chapter-link" href="routes.html"><span class="icon ion-ios-git-branch"></span>Routes</a>
-                        </li>
                     <li class="chapter">
                         <a data-type="chapter-link" href="coverage.html"><span class="icon ion-ios-stats"></span>Documentation coverage</a>
                     </li>

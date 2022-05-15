@@ -35,6 +35,96 @@
 <h1 id="intersection-over-union">intersection-over-Union</h1>
 <h2 id="what-is-intersection">What is intersection?</h2>
 <p>The intersection-over-Union app is a service that takes the coordinates of the ground truth bounding box &amp; predicted bounding box and returns the IoU value between 0 and 1 rounded to a {number_of_decimal_palces}.</p>
+<h2 id="prerequisites">Prerequisites:</h2>
+<p>NPM 14.X</p>
+<p>Docker</p>
+<p>docker-compose</p>
+<p>helm -for production</p>
+<p>skaffold -for production</p>
+<p>minikube (or any other kubernetes cluster) -for production</p>
+<hr>
+<h2 id="clone">Clone</h2>
+<div><pre class="line-numbers"><code class="language-bash">git clone https://gitlab.com/Moeidtopcoder/intersection-over-union.git
+
+cd intersection-over-union</code></pre></div><hr>
+<h2 id="hierarchy">Hierarchy</h2>
+<div><pre class="line-numbers"><code class="language-bash">├── k8s
+│   └── templates
+│       └── tests
+├── scripts
+├── src
+│   ├── application
+│   │   ├── controllers
+│   │   └── dtos
+│   ├── domain
+│   │   ├── decorators
+│   │   ├── entities
+│   │   ├── enums
+│   │   │   └── httpResponse
+│   │   ├── exceptions
+│   │   ├── guards
+│   │   ├── helpers
+│   │   ├── interceptors
+│   │   ├── interfaces
+│   │   ├── modules
+│   │   │   └── common
+│   │   ├── pipes
+│   │   └── services
+│   │       └── common
+│   └── infrastructure
+│       ├── config
+│       └── modules
+│           └── common
+└── __test__
+    ├── controllers
+    ├── e2e
+    ├── factories
+    └── service</code></pre></div><hr>
+<h2 id="instllation">Instllation</h2>
+<div><pre class="line-numbers"><code class="language-bash">cd scripts
+bash start.h {argument}</code></pre></div><p>Arguments: </p>
+<div><pre class="line-numbers"><code class="language-bash">bash start.h -h
+
+-h, --help              Print this help and exit
+-build_docker           Build the docker image called &quot;intersection:latest&quot;
+-build_and_run_docker   Build the docker image and run on local machine
+-stop_docker            Stop running docker container named &quot;intersection&quot;
+-run_app                Run application with npm in usual way for development
+-run_test               Run npm test
+-run_lint               Run npm lint
+-generate_doc           Generate the code documentation
+-deploy_on_kubernetes   you need to have a kubernetes cluster already up and running on the machine.</code></pre></div><hr>
+<h3 id="run-without-script">Run without script</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm install
+npm start</code></pre></div><hr>
+<h3 id="run-the-tests">Run the tests</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm test</code></pre></div><hr>
+<h3 id="linting">linting</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm run lint</code></pre></div><hr>
+<h3 id="generate-documentation">generate documentation</h3>
+<div><pre class="line-numbers"><code class="language-bash">npm run doc</code></pre></div><p>running on </p>
+<p><a href="http://localhost:7000">http://localhost:7000</a></p>
+<hr>
+<h3 id="build-docker-image">Build docker image</h3>
+<div><pre class="line-numbers"><code class="language-bash">docker build . -t {image-name}</code></pre></div><hr>
+<h3 id="env">.env</h3>
+<div><pre class="line-numbers"><code class="language-bash">NODE_ENV={production|development}
+NODE_PORT={port-number}
+DECIMAL_PLACES={decimal-places (default is 3)}</code></pre></div><hr>
+<h3 id="run-in-browser">Run in Browser</h3>
+<p><a href="http://localhost:%7Bport-number%7D/api/v1/intersection">http://localhost:{port-number}/api/v1/intersection</a>
+<img src="/images/intersection.png" alt="" class="img-responsive"></p>
+<hr>
+<h3 id="api-documentation">API documentation</h3>
+<p><a href="http://localhost:%7Bport-number%7D/api">http://localhost:{port-number}/api</a></p>
+<p><img src="/images/swagger.png" alt="" class="img-responsive"></p>
+<hr>
+<h3 id="health-check">Health check</h3>
+<p><a href="http://localhost:%7Bport-number%7D/health">http://localhost:{port-number}/health</a></p>
+<p><img src="/images/liveness.png" alt="" class="img-responsive"></p>
+<hr>
+<h3 id="deploy-to-kubernetes">Deploy to kubernetes</h3>
+<div><pre class="line-numbers"><code class="language-bash">make</code></pre></div><p><img src="/images/kubernetes.png" alt="" class="img-responsive"></p>
 
 
 
