@@ -18,13 +18,13 @@
 <title>cluster_IntersectionModule_providers</title>
 <polygon fill="none" stroke="black" points="152,-40.8 152,-92.8 340,-92.8 340,-40.8 152,-40.8"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_IntersectionModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 144,-92.8 144,-40.8 16,-40.8"/>
-</g>
 <g id="clust4" class="cluster">
 <title>cluster_IntersectionModule_exports</title>
 <polygon fill="none" stroke="black" points="95,-170.8 95,-222.8 239,-222.8 239,-170.8 95,-170.8"/>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_IntersectionModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 144,-92.8 144,-40.8 16,-40.8"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">

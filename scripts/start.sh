@@ -21,6 +21,7 @@ Available options:
 -run_app                Run application with npm in usual way for development
 -run_test               Run npm test
 -run_lint               Run npm lint
+-generate_doc           Generate the code documentation
 -deploy_on_kubernetes   you need to have a kubernetes cluster already up and running on the machine.
 EOF
   exit
@@ -67,25 +68,46 @@ if command which helm > /dev/null; then
         sleep 1
 fi
 }
+checkIfSkaffoldIsInstalled()
+{
+    echo "Checking Skaffold ..."
+if command which helm > /dev/null; then
+        echo "Skaffold is not installed! :("
+        echo "Installing Skaffold ..."
+        curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+        sudo install skaffold /usr/local/bin/
+        echo "Skaffold is installed, skipping..."
+    else
+        echo "Helm is installed :) ..."
+        sleep 1
+fi
+}
 #=============================================================================================================================================================================
 runOnKubernetes(){
     checkIfHelmIsInstalled
+    checkIfSkaffoldIsInstalled
     cd ..
     make
 }
 #=============================================================================================================================================================================
 runTheApp()
 {
+    cd ..
+    npm install
     npm start
 }
 #=============================================================================================================================================================================
 runTheTests()
 {
+    cd ..
+    npm install
     npm test
 }
 #=============================================================================================================================================================================
 runtheLint()
 {
+    cd ..
+    npm install
     npm run lint
 }
 #=============================================================================================================================================================================
@@ -97,6 +119,12 @@ runDockerImage(){
 stopDockerImage(){
    cd ..
     docker-compose down
+}
+#=============================================================================================================================================================================
+generateDoc(){
+    cd ..
+    npm install
+    npm run doc
 }
 #=============================================================================================================================================================================
 buildDockerImage()
@@ -137,6 +165,7 @@ parse_params() {
     -run_app) runTheApp ;;
     -run_test) runTheTests ;;
     -run_lint) runtheLint ;;
+    -generate_doc) generateDoc;;
     -deploy_on_kubernetes) runOnKubernetes ;;
     -v | --verbose) set -x ;;
     --no-color) NO_COLOR=1 ;;
