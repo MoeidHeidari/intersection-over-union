@@ -10,6 +10,7 @@ import { HttpResponseException } from '../exceptions';
 import { processHttpError, validateDTO, validateOutputDTO } from '../helpers';
 import { HttpResponse } from '../interfaces';
 import { HttpResponseService, LoggerService } from './common';
+import { InjectMetric } from "@willsoto/nestjs-prometheus";
 /**
  * Intersection service
  */
@@ -30,7 +31,7 @@ export class IntersectionService {
     private readonly httpResponseService: HttpResponseService,
     private readonly configService: ConfigService,
     private readonly logger: LoggerService
-  ) { }
+  ) {}
   //===========================================================================================
   /**
    * Handles the Intersection request

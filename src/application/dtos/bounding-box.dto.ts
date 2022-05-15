@@ -20,7 +20,7 @@ export class BoundingBoxDTO {
   @IsNumber()
   @ApiProperty({
     description: 'left',
-    example: 5
+    example: 5,
   })
   left: number;
   /**
@@ -31,7 +31,7 @@ export class BoundingBoxDTO {
   @IsNumber()
   @ApiProperty({
     description: 'right',
-    example: 5
+    example: 5,
   })
   right: number;
   /**
@@ -42,7 +42,7 @@ export class BoundingBoxDTO {
   @IsNumber()
   @ApiProperty({
     description: 'top',
-    example: 5
+    example: 5,
   })
   top: number;
   /**
@@ -53,7 +53,7 @@ export class BoundingBoxDTO {
   @IsNumber()
   @ApiProperty({
     description: 'bottom',
-    example: 5
+    example: 5,
   })
   bottom: number;
 

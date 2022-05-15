@@ -2,7 +2,17 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { Controller, Post, Body, HttpStatus, HttpCode, Get, Header, RequestMapping, RequestMethod } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  HttpStatus,
+  HttpCode,
+  Get,
+  Header,
+  RequestMapping,
+  RequestMethod,
+} from '@nestjs/common';
 import { HttpResponse } from '../../domain/interfaces';
 import { Public } from '../../domain/decorators';
 import { IntersectionService } from '../../domain/services/intersection.service';
@@ -28,7 +38,7 @@ export class IntersectionController {
   @ApiResponse({
     status: 200,
     description: 'Returns back the calculated IUO(Intersection Over Union)',
-    type: String ,
+    type: String,
   })
   @Get()
   @Public()
@@ -45,7 +55,7 @@ export class IntersectionController {
   @ApiResponse({
     status: 200,
     description: 'Returns back the calculated IUO(Intersection Over Union)',
-    type: IOUResponseDTO ,
+    type: IOUResponseDTO,
   })
   @ApiBody({ type: [IOURquestDTO] })
   @Header('content-type', 'application/json')
