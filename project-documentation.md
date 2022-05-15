@@ -12,7 +12,7 @@
 
 Provided task is to make an HTTP REST API that can calculate the IOU between two provided Bounding boxes. Intersection over Union is an evaluation metric used to measure the accuracy of an object detector on a particular dataset. We often see this evaluation metric used in object detection challenges. It is is simply an evaluation metric. Any algorithm that provides predicted bounding boxes as output can be evaluated using IoU
 
-<img title="" src="https://miro.medium.com/max/936/1*r0o3vX-x979Q84_lbJWS_g.jpeg" alt="" width="376" data-align="center">
+<img title="" src="/images/Illustration-of-intersection-over-union-IOU.jpeg" alt="" width="376" data-align="center">
 
 IOU has two parameters :
     • ground-truth bounding boxes
@@ -20,7 +20,7 @@ IOU has two parameters :
 
 Calculation of IOU is the area of intersection of two boxes divide by area of union of two boxes.
 
-![](https://miro.medium.com/max/822/1*-yS1RREVZYbQLAyBEegcrQ.png)
+![](/images1_-yS1RREVZYbQLAyBEegcrQ.png)
 
 In this implementation we assume the coordinates of the intersected rectangle as 
 
@@ -36,7 +36,7 @@ to show the coordinates of the top,left.top, and bottom right after the intersec
 
 for the calculation we use the computer graphic convention of +X axis moving to the right and +Y axis moving to the top.
 
-<img title="" src="https://miro.medium.com/max/370/1*sjUSZawTujR26QO2OjnmVg.png" alt="" width="179" data-align="center">
+<img title="" src="/images/1_sjUSZawTujR26QO2OjnmVg.png" alt="" width="179" data-align="center">
 
 we then compare the top left corners of each of the boxes to calculate the top left corner of the intersection as shown below. It would give us the result of the top left corner of the intersection calculation.
 
@@ -60,7 +60,7 @@ const inter_x2 = Math.min(
 
 **Note**: in case of the overlap of two bounding boxes (with exact coordinates) the min or max operation of comparing a value with itself, is simply the value itself.
 
-<img src="https://miro.medium.com/max/286/1*NBop1PgOPl9AuF5LuxtTgg.png" title="" alt="" data-align="center">
+<img src="/images/1_NBop1PgOPl9AuF5LuxtTgg.png" title="" alt="" data-align="center">
 
 Now that we have the calculated coordinates of the intersection we will do another calculation to to find the area of the Intersection rectangle as shown below.
 
