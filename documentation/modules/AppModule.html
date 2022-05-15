@@ -152,6 +152,7 @@ import { LoggerInterceptor } from &#x27;../../domain/interceptors&#x27;;
 import { RolesGuard } from &#x27;../../domain/guards&#x27;;
 import * as modules from &#x27;../../domain/modules&#x27;;
 import { CommonModule } from &#x27;./common/common.module&#x27;;
+import { PrometheusModule } from &quot;@willsoto/nestjs-prometheus&quot;;
 
 /**
  * application modules list
@@ -162,7 +163,7 @@ const modulesList &#x3D; Object.keys(modules).map(moduleIndex &#x3D;&gt; modules
  * application module
  */
 @Module({
-  imports: [
+  imports: [PrometheusModule.register(),
     CommonModule,
     ConfigModule.forRoot({
       load: [configuration],

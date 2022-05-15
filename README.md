@@ -186,4 +186,6 @@ make
 
 ![](/images/kubernetes.png)
 
+### Prometheus metrics
 
+http://localhost:{port-number}/metrics
