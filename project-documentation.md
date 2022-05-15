@@ -892,5 +892,27 @@ As described in the task description we have a bunch of MUST haves and SHOULD ha
   CMD ["node", "dist/main"]
   
   ```
+  source code is fully documented and accessible by generating the documentation with
+
+```bash
+npm run doc
+```
+
+and then
+
+http://localhost:7000
+
+as you can see project is 100% documented.
+
+<img src="/images/full-documentation.png" title="" alt="" width="742">
+
+# Hope you like it
+
+Please don't hestitate should you have any question or suggestion about the project
+
+moeidtopcoder2@gmail.com
+
+# END
+
 
 
