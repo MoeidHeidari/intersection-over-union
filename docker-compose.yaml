@@ -9,4 +9,8 @@ services:
     container_name: intersection
     restart: always
     ports:
-      - 8088:8088
+      - 8077:${NODE_PORT}
+    environment:
+      - NODE_ENV=  ${NODE_ENV}
+      - NODE_PORT= ${NODE_PORT}
+      - DECIMAL_PLACES= ${DECIMAL_PLACES}

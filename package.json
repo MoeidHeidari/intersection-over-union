@@ -37,6 +37,7 @@
         "@types/morgan": "^1.9.2",
         "@willsoto/nestjs-prometheus": "^4.6.0",
         "ansi-styles": "^6.1.0",
+        "cache-manager": "^3.6.1",
         "chokidar": "^3.5.3",
         "class-transformer": "^0.3.1",
         "class-validator": "^0.13.2",
@@ -59,6 +60,7 @@
     "devDependencies": {
         "@nestjs/cli": "^8.2.5",
         "@nestjs/testing": "^8.4.4",
+        "@types/cache-manager": "^3.4.3",
         "@types/express": "^4.17.8",
         "@types/jest": "^27.5.1",
         "@types/node": "^14.14.6",

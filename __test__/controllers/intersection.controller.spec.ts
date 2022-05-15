@@ -6,6 +6,7 @@ import { Test } from '@nestjs/testing';
 import { IntersectionService } from '../../src/domain/services/intersection.service';
 import { IntersectionController } from '../../src/application/controllers';
 import { aFakeIntersection, intersectionWithoutGroundTruthBoundinBox } from '../factories';
+import { CacheModule } from '@nestjs/common';
 
 describe('Intersector controller test', () => {
   let intersectionService: jest.Mocked<IntersectionService>;
@@ -17,6 +18,7 @@ describe('Intersector controller test', () => {
 
   beforeEach(async () => {
     const module = await Test.createTestingModule({
+      imports:[CacheModule.register()],
       controllers: [IntersectionController],
       providers: [
         {
