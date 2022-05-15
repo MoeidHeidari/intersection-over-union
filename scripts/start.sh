@@ -71,7 +71,7 @@ fi
 checkIfSkaffoldIsInstalled()
 {
     echo "Checking Skaffold ..."
-if command which helm > /dev/null; then
+if command which helm > /dev; then
         echo "Skaffold is not installed! :("
         echo "Installing Skaffold ..."
         curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
@@ -152,6 +152,9 @@ if [[ $(which docker-compose) && $(docker-compose --version) ]]; then
         sudo apt install docker-compose || true      
 fi
 }
+init(){
+  sudo chmod 666 /var/run/docker.sock
+}
 #=============================================================================================================================================================================
 parse_params() {
   # default values of variables set from params
@@ -182,6 +185,7 @@ parse_params() {
 #=============================================================================================================================================================================
 clear
 setup_colors
+init
 parse_params "$@"
 #=============================================================================================================================================================================
 

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { CacheInterceptor, CacheModule, Module } from '@nestjs/common';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { configuration } from '../config/env.objects';
@@ -19,7 +19,9 @@ const modulesList = Object.keys(modules).map(moduleIndex => modules[moduleIndex 
  * application module
  */
 @Module({
-  imports: [PrometheusModule.register(),
+  imports: [
+    PrometheusModule.register(),
+    CacheModule.register(),
     CommonModule,
     ConfigModule.forRoot({
       load: [configuration],
@@ -37,9 +39,13 @@ const modulesList = Object.keys(modules).map(moduleIndex => modules[moduleIndex 
     },
     {
       provide: APP_INTERCEPTOR,
+      useClass: CacheInterceptor,
+    },
+    {
+      provide: APP_INTERCEPTOR,
       useClass: LoggerInterceptor,
     },
   ],
   controllers: [],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: intersection
+  name: intersection
+  namespace: intersection
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: intersection
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: intersection
+    spec:
+      containers:
+      - env:
+        - name: DECIMAL_PLACES
+          valueFrom:
+            configMapKeyRef:
+              name: intersection-config
+              key: DECIMAL_PLACES
+        - name: NODE_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: intersection-config
+              key: NODE_ENV
+        - name: NODE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: intersection-config
+              key: NODE_PORT
+        image: registry.gitlab.com/moeidtopcoder/intersection-over-union:latest
+        imagePullPolicy: ""
+        name: intersection
+        ports:
+        - containerPort: 8077
+        resources: {}
+      restartPolicy: Always
+      serviceAccountName: ""
+      volumes: null
+status: {}
