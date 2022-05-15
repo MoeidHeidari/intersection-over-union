@@ -142,8 +142,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/application/controllers/intersection.controller.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/application/controllers/intersection.controller.ts:45</a></div>
                 </td>
             </tr>
 
@@ -196,8 +196,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/application/controllers/intersection.controller.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/application/controllers/intersection.controller.ts:65</a></div>
                 </td>
             </tr>
 
@@ -261,7 +261,17 @@
  * Author Moeid Heidari
  * Date 12 May 2022
  */
-import { Controller, Post, Body, HttpStatus, HttpCode, Get, Header, RequestMapping, RequestMethod } from &#x27;@nestjs/common&#x27;;
+import {
+  Controller,
+  Post,
+  Body,
+  HttpStatus,
+  HttpCode,
+  Get,
+  Header,
+  RequestMapping,
+  RequestMethod,
+} from &#x27;@nestjs/common&#x27;;
 import { HttpResponse } from &#x27;../../domain/interfaces&#x27;;
 import { Public } from &#x27;../../domain/decorators&#x27;;
 import { IntersectionService } from &#x27;../../domain/services/intersection.service&#x27;;
@@ -287,7 +297,7 @@ export class IntersectionController {
   @ApiResponse({
     status: 200,
     description: &#x27;Returns back the calculated IUO(Intersection Over Union)&#x27;,
-    type: String ,
+    type: String,
   })
   @Get()
   @Public()
@@ -304,7 +314,7 @@ export class IntersectionController {
   @ApiResponse({
     status: 200,
     description: &#x27;Returns back the calculated IUO(Intersection Over Union)&#x27;,
-    type: IOUResponseDTO ,
+    type: IOUResponseDTO,
   })
   @ApiBody({ type: [IOURquestDTO] })
   @Header(&#x27;content-type&#x27;, &#x27;application/json&#x27;)
