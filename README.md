@@ -179,9 +179,15 @@ http://localhost:{port-number}/health
 ---
 
 ### Deploy to kubernetes
-
+through Makefile
 ```bash
 make
+```
+through config files
+```bash
+cd k8s/configFiles
+
+  kubectl apply -f intersection-namespace.yaml,intersection-configmap.yaml,intersection-configmap.yaml,intersection-deployment.yaml,intersection-service.yaml
 ```
 
 ![](/images/kubernetes.png)
@@ -189,3 +195,4 @@ make
 ### Prometheus metrics
 
 http://localhost:{port-number}/metrics
+
