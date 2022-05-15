@@ -12,6 +12,8 @@ import {
   Header,
   RequestMapping,
   RequestMethod,
+  CacheInterceptor,
+  UseInterceptors,
 } from '@nestjs/common';
 import { HttpResponse } from '../../domain/interfaces';
 import { Public } from '../../domain/decorators';
@@ -22,6 +24,7 @@ import { ApiBody, ApiOperation, ApiParam, ApiResponse } from '@nestjs/swagger';
  * Intersection controller
  */
 @Controller('api/v1/intersection')
+@UseInterceptors(CacheInterceptor)
 export class IntersectionController {
   /**
    * Intersection controller class constructor
