@@ -41,7 +41,7 @@ build image:
         - docker build -t $CI_REGISTRY_IMAGE .
         - docker push $CI_REGISTRY_IMAGE
 
-upload image:
+upload helmchart:
     image: curlimages/curl:latest
     stage: upload
     rules:
