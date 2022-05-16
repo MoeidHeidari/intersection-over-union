@@ -47,5 +47,5 @@ upload helmchart:
     rules:
         - if: $CI_COMMIT_BRANCH == "main" || ($CI_PIPELINE_SOURCE == 'merge_request_event' && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" ))
     script:
-      - 'curl --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=k8s/" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
+      - 'curl --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=k8s/" "${CI_API_V4_URL}/projects/36109347/packages/helm/api/stable/charts"'
 
