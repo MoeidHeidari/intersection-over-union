@@ -39,3 +39,15 @@ build image:
         - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
         - docker build -t $CI_REGISTRY_IMAGE .
         - docker push $CI_REGISTRY_IMAGE
+
+image: curlimages/curl:latest
+ 
+stages:
+  - upload
+ 
+upload:
+  stage: upload
+  rules:
+        - if: $CI_COMMIT_BRANCH == "main" || ($CI_PIPELINE_SOURCE == 'merge_request_event' && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" ))
+  script:
+    - 'curl --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=k8s/" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/stable/charts"'
