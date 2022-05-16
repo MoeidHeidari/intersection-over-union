@@ -42,10 +42,6 @@ build image:
 
 build image:
     image: curlimages/curl:latest
- 
-    stages:
-      - upload
- 
     upload:
       stage: upload
       rules:
