@@ -31,6 +31,7 @@ test:
     
 build image:
     image: docker:20.10.10
+    image: curlimages/curl:latest
     services:
         - docker:20.10.10-dind
     rules:
