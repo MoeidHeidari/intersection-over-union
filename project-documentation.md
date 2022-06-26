@@ -1,8 +1,4 @@
-## Intersection Over Union Home task (Senior backend developer.
 
-#### Candidate: S.Moeid Heidari
-
----
 
 #### General description
 
