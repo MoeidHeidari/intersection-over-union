@@ -6,6 +6,7 @@ skaffold-dev:
 skaffold-debug:
 	skaffold debug --auto-build --auto-deploy --tail --cleanup
 
+
 .PHONY: encrypt-secrets
 encrypt-secrets:
 	helm secrets enc k8s/secrets.yaml
