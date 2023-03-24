@@ -131,6 +131,8 @@ checkHelmInstalledVersion() {
   fi
 }
 
+
+
 # downloadFile downloads the latest binary package and also the checksum
 # for that binary.
 downloadFile() {
