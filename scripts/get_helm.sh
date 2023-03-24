@@ -45,6 +45,7 @@ initArch() {
   esac
 }
 
+
 # initOS discovers the operating system for this system.
 initOS() {
   OS=$(echo `uname`|tr '[:upper:]' '[:lower:]')
